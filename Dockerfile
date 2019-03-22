@@ -8,10 +8,15 @@ RUN apt update \
     && apt install -y nodejs apt-transport-https lsb-release ca-certificates \ 
     && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \ 
     && sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list' \ 
-    && add-apt-repository ppa:deadsnakes/ppa \
     && apt update \ 
-    && apt install -y nginx composer zip unzip bsdtar curl wget golang-go python3.6 git \ 
-    php7.2-xml php7.2-fpm php7.2-cli php7.2-curl php7.2-bcmath php7.2-mbstring
+    && apt install -y nginx composer zip unzip bsdtar curl wget golang-go git \ 
+    php7.2-xml php7.2-fpm php7.2-cli php7.2-curl php7.2-bcmath php7.2-mbstring \
+    python python-dev python-all python-all-dev \
+    python-numpy python-scipy python-matplotlib python-cycler \
+    python-dateutil python-decorator python-joblib python-matplotlib-data \
+    python-tz \
+    python2.7 python2.7-dev \
+    python3 python3-dev python3-numpy python3.5
 
 RUN npm install -g eslint
 
