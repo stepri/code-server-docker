@@ -6,8 +6,6 @@ RUN apt update \
     && apt install -y wget curl gnupg2 software-properties-common \ 
     && curl -sL https://deb.nodesource.com/setup_8.x | bash - \ 
     && apt install -y nodejs apt-transport-https lsb-release ca-certificates \ 
-    && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \ 
-    && sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list' \ 
     && apt update \ 
     && apt install -y nginx composer zip unzip bsdtar curl wget golang-go git \ 
     php7.2-xml php7.2-fpm php7.2-cli php7.2-curl php7.2-bcmath php7.2-mbstring \
