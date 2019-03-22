@@ -6,5 +6,10 @@ RUN apt-get install -y bsdtar curl wget
 RUN mkdir -p /root/.code-server/extensions
 RUN curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/MS-vsliveshare/vsextensions/vsliveshare/0.3.1326/vspackage | bsdtar -xvf - extension
 RUN mv extension /root/.code-server/extensions/ms-vsliveshare.vsliveshare-0.3.1326
+RUN rm -rf extension
+RUN curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/MS-vsliveshare/vsextensions/vsliveshare-pack/0.2.10/vspackage | bsdtar -xvf - extension
+RUN mv extension /root/.code-server/extensions/ms-vsliveshare.vsliveshare-pack-0.2.10
+
+
 RUN wget -O ~/vsls-reqs https://aka.ms/vsls-linux-prereq-script && chmod +x ~/vsls-reqs && ~/vsls-reqs
 CMD ["code-server", "--allow-http", "--no-auth"]
